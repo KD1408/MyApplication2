@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#e65252"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="#e65252"
+    android:orientation="vertical"
+    tools:context="com.example.kruta.communityapp.activity.signup_next">
+
+    <TextView
+        android:id="@+id/tvFname"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvLname"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvCID"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:text="57dd00df45b169efde7dbe98"/>
+
+
+    <TextView
+        android:id="@+id/tvRelation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Relationship"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+
+    <Spinner
+        android:id="@+id/spnRelation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:popupBackground="#FFFFFF"
+        android:background="#FFFFFF"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Gender"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rgGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#FFFFFF"/>
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textColor="#FFFFFF"
+
+            android:buttonTint="#FFFFFF"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvBdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Birthdate"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/etBdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffffffff"
+        android:hint="Date of Birth"
+        android:onClick="setDate"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/actvCntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffffff"
+        android:hint="Country"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null"
+        android:ems="10"/>
+
+    <EditText
+        android:id="@+id/etStreet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffffff"
+        android:hint="Address"
+        android:maxLength="350"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffffff"
+        android:hint="City"
+        android:maxLength="100"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null" />
+
+    <EditText
+        android:id="@+id/etState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffffff"
+        android:hint="State"
+        android:maxLength="100"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null" />
+
+    <EditText
+        android:id="@+id/etZip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffffff"
+        android:hint="Zip Code"
+        android:maxLength="8"
+        android:singleLine="true"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null" />
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#9f2c2c"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
+    </ScrollView>

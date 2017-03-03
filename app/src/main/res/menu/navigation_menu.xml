@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_menu">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/item_profile"
+            android:title="Profile"
+            android:checked="true"/>
+
+        <item
+            android:id="@+id/item_directory"
+            android:title="Directory"/>
+        <item
+            android:id="@+id/item_matrimonial"
+            android:title="Matrimonial"/>
+
+        <item
+            android:id="@+id/item_job"
+            android:title="Jobs"/>
+
+
+       <item
+            android:id="@+id/item_setting"
+            android:title="Setting"/>
+
+
+        <item
+            android:id="@+id/item_logout"
+            android:title="Logout"/>
+
+    </group>
+
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    <color name="colorPrimaryLight">#FFCDD2</color>
+    <color name="colorAccent">#7C4DFF</color>
+
+
+
+    <color name="accent">#2d556d</color>
+    <color name="window_background">#FFFFFF</color>
+    <color name="text_color_light">#FFFFFF</color>
+
+    <color name="bg_color">#F5F5F9</color>
+
+
+    <color name="bg_statusbar">#2d556d</color>
+
+</resources>

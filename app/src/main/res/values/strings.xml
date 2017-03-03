@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CommunityApp</string>
+    <string-array name="drawer_item_list">
+        <item>Dashboard</item>
+        <item>Home</item>
+        <item>Setting</item>
+        <item>Logout</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
+
+
+    <!-- Common String  -->
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">CANCEL</string>
+
+    <!--Common Msg-->
+    <string name="msg_internet_unavailable_msg">No Internet Connection !</string>
+    <string name="msg_networkerror">Network error.\n Please try again later</string>
+</resources>
