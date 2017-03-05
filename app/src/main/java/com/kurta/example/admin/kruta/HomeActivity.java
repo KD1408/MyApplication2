@@ -82,13 +82,11 @@ public class HomeActivity extends AppCompatActivity implements
             if(extras == null){
                 new_user_email = null;
                 new_user_name = null;
-                //header_user_name.setText("No Data");
-                //header_user_email.setText("No Data");
+
             }else{
                 new_user_email = extras.getString("UserEmail");
                 new_user_name = extras.getString("UserName");
 
-                Toast.makeText(HomeActivity.this, " "+new_user_email, Toast.LENGTH_LONG).show();
                 header_user_name.setText(new_user_name);
                 header_user_email.setText(new_user_email);
             }
@@ -291,7 +289,6 @@ public class HomeActivity extends AppCompatActivity implements
                 .show();
 
 
-               /* new userAttendanceTask().execute("sd1dsqew1ds8h9cgh82scb054", "1231fsf", id, value, "0", date);*/
     }
 
 

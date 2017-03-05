@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tvEnter,tvAcc;
     EditText etUser, etPass;
-    String targetURL = "http://parivar.me/api/v1/users/auth";
     Button btnLgn;
     Context ctx;
     ConnectionDetector cd;
@@ -93,13 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (!etUser.getText().toString().isEmpty() && !etPass.getText().toString().isEmpty()) {
-                   // postData newData = new postData();
-
 
                     try {
-                      /*  postData d = new postData();
-                        d.execute(etUser.getText().toString(), etPass.getText().toString()).get();
-                  */      //@kaians.p
+                          //@kaians.p
                         if (cd.isConnectingToInternet()) {
 
                             //api calls
@@ -108,24 +102,6 @@ public class MainActivity extends AppCompatActivity {
                         } else {
 
                         }
-
-                     /*   if (d.result.get(0) == "200"){
-
-                            //@kaians.p
-                           // Intent intent = new Intent(MainActivity.this, profile.class);
-                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                            intent.putExtra("UserEmail", etUser.getText().toString());
-                            startActivity(intent);
-                            finish();
-
-                        }
-                        else {
-                            if (view != null) {
-                                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                                Toast.makeText(MainActivity.this,"Incorrect Username or Password",Toast.LENGTH_LONG).show();
-                            }
-                        }*/
 
                     } catch (Throwable t) {
                         Log.e("JSON error", "Error" +t);
@@ -150,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             VolleyIntialization v = new VolleyIntialization(MainActivity.this, true, true);
-            //strEmail,strPassword,strSecurityKey ,inCnNum,strMobile compsolary
             final String email = etUser.getText().toString();
             final String password = etPass.getText().toString();
 
@@ -203,87 +178,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getResponseForLogin(String response) {
-
-
-
-    }
-
-
-
-    //-------------------------------------------------------------------------------------
-    public class postData extends AsyncTask<String, String, String>{
-
-        String res = "";
-        URL url;
-        //JSONObject obj = new JSONObject();
-        HttpURLConnection connection = null;
-        InputStream is;
-        int response;
-        ArrayList result;
-
-        @Override
-        protected String doInBackground(String...param) {
-
-            try {
-                result = new ArrayList();
-                url = new URL(targetURL);
-                connection = (HttpURLConnection)url.openConnection();
-                connection.setDoOutput(true);
-                connection.setRequestMethod("POST"); // hear you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.
-                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;"); // here you are setting the `Content-Type` for the data you are sending which is `application/json`
-                connection.setRequestProperty("Content-Type", "application/json");
-                connection.connect();
-
-                //Send request
-                DataOutputStream wr = new DataOutputStream(
-                        connection.getOutputStream ());
-                JSONObject js = new JSONObject();
-                js.put("email",param[0]);
-                js.put("password",param[1]);
-                wr.writeBytes(js.toString());
-                wr.flush();
-                wr.close ();
-
-                //ctx = param[2];
-
-                response = connection.getResponseCode();
-                if (response >= 200 && response <=399){
-                    Log.v("R type",""+response);
-                    is = connection.getInputStream();
-                    result.add(0,"200");
-                } else {
-                    Log.v("R type",""+response);
-                    is = connection.getErrorStream();
-                    result.add(0,"404");
-                }
-
-                try {
-                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
-                    String line;
-                    StringBuilder sb = new StringBuilder();
-                    while((line = br.readLine()) != null){
-                        sb.append(line + "\n");
-                    }
-                    br.close();
-                    res = sb.toString();
-                    result.add(1,res);
-                    Log.v("Response is", res+"something something");
-                }
-                catch (IOException e){
-                    Log.e("Error","Read Error");
-                }
-                //onPostExecute("wow");
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-
-                if(connection != null) {
-                    connection.disconnect();
-                }
-            }
-            return res;
-        }
-
     }
 
 }
