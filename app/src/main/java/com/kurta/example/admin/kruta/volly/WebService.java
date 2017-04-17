@@ -24,12 +24,29 @@ public class WebService {
         String url = URLS.WEB_LOGIN;
         Map<String, String> params = new HashMap<>();
 
-       // params.put(WebServiceTag.TAG_STR_APIKEY, CV.API_KEY);
+        // params.put(WebServiceTag.TAG_STR_APIKEY, CV.API_KEY);
         params.put(WebServiceTag.TAG_EMAIL, email); //here comes ur key and value of params
         params.put(WebServiceTag.TAG_PASSWORD, password);
 
 
         vollyInit.vollyStringRequestCall(url, Request.Method.POST, params, vollyHanlder);
+    }
+
+
+
+
+
+    public static void GetDirectory(VolleyIntialization vollyInit, String email ,String password,OnVolleyHandler vollyHanlder) throws JSONException {
+
+
+
+        String url = URLS.WEB_DIRECTORY;
+        Map<String, String> params = new HashMap<>();
+
+      /*  // params.put(WebServiceTag.TAG_STR_APIKEY, CV.API_KEY);
+        params.put(WebServiceTag.TAG_EMAIL, email); //here comes ur key and value of params
+        params.put(WebServiceTag.TAG_PASSWORD, password);*/
+        vollyInit.vollyStringRequestCall(url, Request.Method.GET, params, vollyHanlder);
     }
 
 

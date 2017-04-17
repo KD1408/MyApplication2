@@ -179,6 +179,4 @@ public class VolleyIntialization {
         ((KurtaApplication) mActivity.getApplicationContext()).volley.addToRequestQueue(mr);
 
     }
-
-
 }

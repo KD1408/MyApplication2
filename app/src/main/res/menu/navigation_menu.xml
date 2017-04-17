@@ -5,6 +5,11 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/item_dashboard"
+            android:title="Dashboard"
+            android:checked="true"/>
+
+        <item
             android:id="@+id/item_profile"
             android:title="Profile"
             android:checked="true"/>

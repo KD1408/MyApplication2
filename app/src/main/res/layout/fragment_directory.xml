@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/material_blue_grey_800">
+    android:background="@color/material_blue_grey_800"
+    tools:context="com.forexlive.AboutFragment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/about_toolbar"
@@ -15,9 +16,10 @@
         android:elevation="@dimen/toolbar_elevation"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <ImageView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_drawer"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </LinearLayout>

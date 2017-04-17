@@ -33,20 +33,18 @@ public class HomeActivity extends AppCompatActivity implements
     TextView header_user_name, header_user_email;
 
     //TAGS
+    private final static String DASHBOARD_TAG = "dashboard";
     private final static String PROFILE_TAG = "profile";
     private final static String DIRECTORY_TAG = "directory";
     private final static String MATRIMONIAL_TAG = "matrimonial";
     private final static String JOB_TAG = "job";
-    private final static String SETTING_TAG = "setting";
-    private final static String LOGOUT_TAG = "logout";
-
 
     //IDS
-    private final static int ID_PROFILE = 0;
-    private final static int ID_DIRECTORY = 1;
-    private final static int ID_MATRIMONIAL = 2;
-    private final static int ID_JOB = 3;
-    private final static int ID_SETTING = 4;
+    private final static int ID_DASHBOARD = 0;
+    private final static int ID_PROFILE = 1;
+    private final static int ID_DIRECTORY = 2;
+    private final static int ID_MATRIMONIAL = 3;
+    private final static int ID_JOB = 4;
     private final static int ID_LOGOUT = 5;
 
     //Navigation
@@ -54,7 +52,6 @@ public class HomeActivity extends AppCompatActivity implements
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    private View dialogView;
     private final static String SELECTED_TAG = "selected_index";
 
     @Override
@@ -93,9 +90,9 @@ public class HomeActivity extends AppCompatActivity implements
         }
 
         //default fragment with dashbord fragment
-        selectedIndex = ID_PROFILE;
+        selectedIndex = ID_DASHBOARD;
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
-                new ProfileFragment(), PROFILE_TAG).commit();
+                new DashboardFragment(), DASHBOARD_TAG).commit();
 
     }
 
@@ -172,18 +169,6 @@ public class HomeActivity extends AppCompatActivity implements
                     //open job fragment
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                             new JobFragment(), JOB_TAG).commit();
-
-                }
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-
-            case R.id.item_setting:
-                if(!menuItem.isChecked()){
-                    selectedIndex = ID_SETTING;
-                    menuItem.setChecked(true);
-                    //open setting fragment
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
-                            new SettingFragment(), SETTING_TAG).commit();
 
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);

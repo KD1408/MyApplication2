@@ -15,9 +15,11 @@ import android.view.WindowManager;
 import com.example.admin.kurta.R;
 
 /**
- * Created by admin on 11-Feb-17.
+ * Created by Krutarth on 4/15/2017.
  */
-public class SettingFragment extends Fragment{
+
+public class DashboardFragment extends Fragment {
+
     private HomeActivity appCompatActivity;
 
     private Toolbar toolbar;
@@ -33,7 +35,7 @@ public class SettingFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
        /* int i = getArguments().getInt(ARG_PLANET_NUMBER);
         String planet = getResources().getStringArray(R.array.drawer_item_list)[i];
 
@@ -73,7 +75,7 @@ public class SettingFragment extends Fragment{
 
 
     private void setupToolbar(){
-        toolbar.setTitle("Setting");
+        toolbar.setTitle("Dashboard");
         appCompatActivity.setSupportActionBar(toolbar);
     }
 

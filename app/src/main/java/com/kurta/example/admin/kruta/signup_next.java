@@ -168,7 +168,8 @@ public class signup_next extends AppCompatActivity {
                         postData d = new postData();
                         d.execute(tvFname.getText().toString(), tvLname.getText().toString(), tvEmail.getText().toString(),
                                 tvPass.getText().toString(), "https://www.google.com/search?q=entersafe=off", etDOB.getText().toString(), rb.getText().toString().toLowerCase(),
-                                spnRelation.getSelectedItem().toString().toLowerCase(), tvCid.getText().toString(), "04/09/2016").get();
+                                spnRelation.getSelectedItem().toString().toLowerCase(), tvCid.getText().toString(), "04/09/2016",
+                                tvPhone.getText().toString()).get();
 
                         if (d.result.get(0) == "204") {
                             //Intent intent = new Intent(main.this, ListViewImage.class); startActivity(intent); finish();
@@ -243,6 +244,7 @@ public class signup_next extends AppCompatActivity {
                 js.put("relationShip",param[7]);
                 js.put("communityId",param[8]);
                 js.put("createdAt",param[9]);
+                js.put("phone",param[10]);
                 wr.writeBytes(js.toString());
                 wr.flush();
                 wr.close ();

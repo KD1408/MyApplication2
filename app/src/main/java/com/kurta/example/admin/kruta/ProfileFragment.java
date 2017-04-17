@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.example.admin.kurta.R;
 
@@ -21,6 +22,7 @@ public class ProfileFragment extends Fragment{
     private HomeActivity appCompatActivity;
 
     private Toolbar toolbar;
+    private TextView tvFname, tvLname, tvPhone, tvEmail, tvRelation;
 
     @Override
     public void onAttach(Activity activity) {
@@ -61,6 +63,11 @@ public class ProfileFragment extends Fragment{
         toolbar = (Toolbar)rootView.findViewById(R.id.about_toolbar);
 
         setupToolbar();
+
+        tvFname = (TextView) rootView.findViewById(R.id.tv_fname);
+        tvLname = (TextView) rootView.findViewById(R.id.tv_lname);
+        tvPhone = (TextView) rootView.findViewById(R.id.tv_phone);
+        tvEmail = (TextView) rootView.findViewById(R.id.tv_email);
 
         return rootView;
     }
