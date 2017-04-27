@@ -49,8 +49,32 @@ public class WebService {
         vollyInit.vollyStringRequestCall(url, Request.Method.GET, params, vollyHanlder);
     }
 
+    public static void GetMatrimony(VolleyIntialization vollyInit, String email ,String password,OnVolleyHandler vollyHanlder) throws JSONException {
 
 
+
+        String url = URLS.WEB_MATRIMONY;
+        Map<String, String> params = new HashMap<>();
+
+      /*  // params.put(WebServiceTag.TAG_STR_APIKEY, CV.API_KEY);
+        params.put(WebServiceTag.TAG_EMAIL, email); //here comes ur key and value of params
+        params.put(WebServiceTag.TAG_PASSWORD, password);*/
+        vollyInit.vollyStringRequestCall(url, Request.Method.GET, params, vollyHanlder);
+    }
+
+
+    public static void GetDashboard(VolleyIntialization vollyInit, String email ,String password,OnVolleyHandler vollyHanlder) throws JSONException {
+
+
+
+        String url = URLS.WEB_DASHBOARD;
+        Map<String, String> params = new HashMap<>();
+
+      /*  // params.put(WebServiceTag.TAG_STR_APIKEY, CV.API_KEY);
+        params.put(WebServiceTag.TAG_EMAIL, email); //here comes ur key and value of params
+        params.put(WebServiceTag.TAG_PASSWORD, password);*/
+        vollyInit.vollyStringRequestCall(url, Request.Method.GET, params, vollyHanlder);
+    }
 
 }
 

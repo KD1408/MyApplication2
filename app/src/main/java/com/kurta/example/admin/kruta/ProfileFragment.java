@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,25 @@ import android.widget.TextView;
 
 import com.example.admin.kurta.R;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by admin on 11-Feb-17.
  */
 public class ProfileFragment extends Fragment{
     private HomeActivity appCompatActivity;
 
+
+    //{"status":true,"message":"Logged in successfully.",
+    // "data":{"id":"58f7fe4f0825946626c0d9b7","userId":6,"fname":"krutarth","lname":"doshi",
+    // "email":"krutarthdoshi14@gmail.com","gender":"male","relationShip":"single",
+    // "isOnline":false,"isActive":false,"isVerified":false,"communities":[],
+    // "dob":"1993-08-14T00:00:00.000Z","addresses":[null],
+    // "qualifications":[],"occupations":[],"phones":[{"privacy":"public","type":"Mobile","number":"9197491159"}],"communityId":"57dd00df45b169efde7dbe98","token":"rJxuLCuSCe"}}
+
     private Toolbar toolbar;
-    private TextView tvFname, tvLname, tvPhone, tvEmail, tvRelation;
+    private TextView tvFname, tvLname, tvPhone, tvEmail, tvRelation, tvGender, tvDOB;
+    String email,fname,lname,gender,dob,relation,phone;//status;
 
     @Override
     public void onAttach(Activity activity) {
@@ -43,6 +55,21 @@ public class ProfileFragment extends Fragment{
                 "drawable", getActivity().getPackageName());
         ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);*/
         //getActivity().setTitle("planet");
+
+        //getdata from bundle
+        email = getArguments().getString("new_user_email");
+        fname = getArguments().getString("f_name");
+        lname = getArguments().getString("l_name");
+        gender = getArguments().getString("gender");
+        relation = getArguments().getString("status");
+        //dob = getArguments().getString("edttext");
+        //status = getArguments().getString("status");
+        dob = getArguments().getString("dob");
+        phone = getArguments().getString("phones");
+        Log.e("","phone >> "+phone);
+
+
+
 
         //
         if(Build.VERSION.SDK_INT >=21){
@@ -68,6 +95,19 @@ public class ProfileFragment extends Fragment{
         tvLname = (TextView) rootView.findViewById(R.id.tv_lname);
         tvPhone = (TextView) rootView.findViewById(R.id.tv_phone);
         tvEmail = (TextView) rootView.findViewById(R.id.tv_email);
+        tvRelation = (TextView) rootView.findViewById(R.id.tv_relation);
+        tvGender = (TextView) rootView.findViewById(R.id.tv_gender);
+        tvDOB = (TextView) rootView.findViewById(R.id.tv_dob);
+
+
+        tvFname.setText(fname);
+        tvLname.setText(lname);
+        tvPhone.setText(phone);
+        tvEmail.setText(email);
+        tvRelation.setText(relation);
+        tvGender.setText(gender);
+        tvDOB.setText(dob);
+
 
         return rootView;
     }

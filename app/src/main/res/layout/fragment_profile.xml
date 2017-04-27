@@ -172,6 +172,7 @@
             android:backgroundTint="#ffffffff"
             android:hint="Your Date of Birth"
             android:maxLines="1"
+            android:maxLength="10"
             android:textColor="#FFFFFF"/>
 
         <Button

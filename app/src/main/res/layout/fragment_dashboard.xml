@@ -16,83 +16,10 @@
         android:elevation="@dimen/toolbar_elevation"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardElevation="@dimen/card_elevation"
-        card_view:cardCornerRadius="@dimen/card_corner_radius">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#e65252"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
-
-
-                <TextView
-                    android:id="@+id/card_fname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/card_text_title"
-                    android:maxLines="1"
-                    android:scrollHorizontally="false"
-                    android:ellipsize="end"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="10dp"
-                    android:textColor="#000000"
-                    android:text="FirstName"
-                    android:paddingTop="10dp"/>
-
-                <TextView
-                    android:id="@+id/card_lname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/card_text_title"
-                    android:maxLines="1"
-                    android:scrollHorizontally="false"
-                    android:ellipsize="end"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="10dp"
-                    android:text="LastName"
-                    android:paddingTop="1dp"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/card_phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/card_text_date_time"
-                    android:maxLines="1"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="10dp"
-                    android:text="phone"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/card_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/card_text_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="10dp"
-                    android:text="Email"/>
-
-
-            </LinearLayout>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </LinearLayout>

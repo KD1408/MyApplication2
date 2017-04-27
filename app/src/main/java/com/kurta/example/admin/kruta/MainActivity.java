@@ -133,6 +133,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Log.e("webcallLogin :: ", response);
                     getResponseForLogin(response);
+                    //{"status":true,"message":"Logged in successfully.","data":{"id":"58f7fe4f0825946626c0d9b7",
+                    // "userId":6,"fname":"krutarth","lname":"doshi","email":"krutarthdoshi14@gmail.com",
+                    // "gender":"male","relationShip":"single","isOnline":false,"isActive":false,"isVerified":false,
+                    // "communities":[],"dob":"1993-08-14T00:00:00.000Z","addresses":[null],"qualifications":[],
+                    // "occupations":[],"phones":[{"privacy":"public","type":"Mobile","number":"9197491159"}],
+                    // "communityId":"57dd00df45b169efde7dbe98","token":"rJxuLCuSCe","phone":"9197491159"}}
 
                     try{
                     JSONObject responseText = new JSONObject(response);
@@ -144,8 +150,16 @@ public class MainActivity extends AppCompatActivity {
                     str_full_name = String.valueOf(str_fname)+" "+ String.valueOf(str_lname);
 
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                        intent.putExtra("UserEmail", etUser.getText().toString());
+                        intent.putExtra("UserEmail", etUser.getText().toString());//email
                         intent.putExtra("UserName", str_full_name);
+
+                        intent.putExtra("fname", json_data.getString("fname"));
+                        intent.putExtra("lname", json_data.getString("lname"));
+                        intent.putExtra("gender", json_data.getString("gender"));
+                        intent.putExtra("relationShip", json_data.getString("relationShip"));
+                        intent.putExtra("dob", json_data.getString("dob"));
+                        intent.putExtra("phone",json_data.getString("phone"));
+
                         startActivity(intent);
                         finish();
 

@@ -21,14 +21,14 @@
             android:id="@+id/item_matrimonial"
             android:title="Matrimonial"/>
 
-        <item
+        <!-- <item
             android:id="@+id/item_job"
             android:title="Jobs"/>
 
 
        <item
             android:id="@+id/item_setting"
-            android:title="Setting"/>
+            android:title="Setting"/> -->
 
 
         <item

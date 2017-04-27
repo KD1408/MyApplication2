@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     //For UserName and UserEmail from previous activity
-    String new_user_name, new_user_email;
+    String new_user_name, new_user_email ,f_name,l_name,gender,dob,status,phones;
 
     //navigation header textview
     TextView header_user_name, header_user_email;
@@ -86,6 +86,16 @@ public class HomeActivity extends AppCompatActivity implements
 
                 header_user_name.setText(new_user_name);
                 header_user_email.setText(new_user_email);
+
+
+                //@kns.p -------------------------------------------------------
+                f_name = extras.getString("fname");
+                l_name = extras.getString("lname");
+                gender = extras.getString("gender");
+                status = extras.getString("relationShip");
+                dob = extras.getString("dob");
+                phones = extras.getString("phone");
+                //------------------------------------------------------------
             }
         }
 
@@ -127,12 +137,41 @@ public class HomeActivity extends AppCompatActivity implements
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch(menuItem.getItemId()){
+
+            case R.id.item_dashboard:
+                if(!menuItem.isChecked()){
+                    selectedIndex = ID_DASHBOARD;
+                    menuItem.setChecked(true);
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
+                            new DashboardFragment(), DASHBOARD_TAG).commit();
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+
             case R.id.item_profile:
                 if(!menuItem.isChecked()){
                     selectedIndex = ID_PROFILE;
                     menuItem.setChecked(true);
+
+                    //@kns.p------------
+                    Bundle bundle = new Bundle();
+                    bundle.putString("new_user_email",new_user_email);
+                    bundle.putString("f_name",f_name);
+                    bundle.putString("l_name", l_name);
+                    bundle.putString("gender", gender);
+                    //bundle.putString("dob", gender);
+                    bundle.putString("status", status);
+                    bundle.putString("dob", dob);
+                    bundle.putString("phones",phones);
+
+
+// set Fragmentclass Arguments
+                    ProfileFragment fragobj = new ProfileFragment();
+                    fragobj.setArguments(bundle);
+                    //---------------------------------
+
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
-                            new ProfileFragment(), PROFILE_TAG).commit();
+                            fragobj, PROFILE_TAG).commit();
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
@@ -162,7 +201,7 @@ public class HomeActivity extends AppCompatActivity implements
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
-            case R.id.item_job:
+            /* case R.id.item_job:
                 if(!menuItem.isChecked()){
                     selectedIndex = ID_JOB;
                     menuItem.setChecked(true);
@@ -172,7 +211,7 @@ public class HomeActivity extends AppCompatActivity implements
 
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
+                return true; */
 
             case R.id.item_logout:
                 if(!menuItem.isChecked()){

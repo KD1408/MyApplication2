@@ -1,11 +1,16 @@
 package com.kurta.example.admin.kruta;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -39,6 +44,8 @@ public class DirectoryFragment extends Fragment {
 
     private Toolbar toolbar;
     private RecyclerView recyclerView;
+
+    AlertDialog.Builder alertDialog;
 
     ConnectionDetector cd;
     DirectoryAdapter mAdapter;
@@ -107,8 +114,13 @@ public class DirectoryFragment extends Fragment {
                         intent.putExtra("title", feedItem.getTitle());
                         startActivity(intent);*/
 
-                        //Toast.makeText(getActivity(), "pos >> " + position, Toast.LENGTH_SHORT).show();
 
+                        DirectoryItem feedItem = mAdapter.getItem(position);
+
+                        String number= feedItem.getRecords().get(position).getPhone();
+                        Toast.makeText(getActivity(), "pos >> " + feedItem.getRecords().get(position).getPhone(), Toast.LENGTH_SHORT).show();
+
+                        //showDialog(number);
                     }
                 })
         );
@@ -116,6 +128,64 @@ public class DirectoryFragment extends Fragment {
 
         return rootView;
     }
+
+/*    private void showDialog(final String number) {
+
+
+        new android.support.v7.app.AlertDialog.Builder(getActivity())
+                .setTitle(R.string.app_name)
+                .setMessage("Make a call or send sms !")
+                .setPositiveButton("CALL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("SMS", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
+                        smsIntent.setType("vnd.android-dir/mms-sms");
+                        smsIntent.putExtra("address",number);
+                        smsIntent.putExtra("sms_body","Hello folks");
+                        startActivity(smsIntent);
+                    }
+                })
+                .setIcon(R.mipmap.ic_launcher)
+                .show();
+
+
+       /* alertDialog = new AlertDialog.Builder(getActivity());
+        // Setting Dialog Title
+        alertDialog.setTitle("Save File...");
+        // Setting Dialog Message
+        alertDialog.setMessage("Do you want to save this file?");
+        // Setting Icon to Dialog
+        alertDialog.setIcon(R.drawable.ic_drawer);
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("CALL", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                startActivity(intent);
+            }
+        });
+
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("SMS", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
+                smsIntent.setType("vnd.android-dir/mms-sms");
+                smsIntent.putExtra("address",number);
+                smsIntent.putExtra("sms_body","Hello folks");
+                startActivity(smsIntent);
+
+            }
+        });
+
+        alertDialog.show();*/
+   // }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -132,7 +202,7 @@ public class DirectoryFragment extends Fragment {
 
     private void setupRecyclerView() {
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(layoutManager);
 
 
@@ -195,7 +265,7 @@ public class DirectoryFragment extends Fragment {
                     }
 
 
-                    mAdapter = new DirectoryAdapter(mList); //pass arrylist of model type in to adapter
+                    mAdapter = new DirectoryAdapter(getActivity(),mList); //pass arrylist of model type in to adapter
                     recyclerView.setAdapter(mAdapter);//set adapter in to recycler view
 
                 }
