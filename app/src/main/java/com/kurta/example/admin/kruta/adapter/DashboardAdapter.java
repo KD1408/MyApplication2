@@ -63,12 +63,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
 
     @Override
     public void onBindViewHolder(DashboardAdapter.ViewHolder holder, int position) {
+        holder.notification.setText(DashboardItem.get(position).getRecords().get(position).getText());
         holder.email.setText(DashboardItem.get(position).getRecords().get(position).getEmail());
         holder.tvFname.setText(DashboardItem.get(position).getRecords().get(position).getFname());
         holder.tvLname.setText(DashboardItem.get(position).getRecords().get(position).getLname());
 
-        Picasso.with(ctx).load(DashboardItem.get(position).getRecords().get(position).getPictureUrl().replace("\\", "").replaceAll(" ", "%20")).fit()
-                .placeholder(R.drawable.profile)
+        Picasso.with(ctx).load(DashboardItem.get(position).getRecords().get(position).getPicturelUrl())//.replace("\\", "").replaceAll(" ", "%20")).fit()
+                .placeholder(R.drawable.enter)
                 .error(R.drawable.profile).into(holder.thumbnail, new Callback() {
             @Override
             public void onSuccess() {

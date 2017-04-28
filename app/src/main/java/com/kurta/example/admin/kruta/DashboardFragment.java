@@ -132,7 +132,7 @@ public class DashboardFragment extends Fragment {
 
 
     private void setupToolbar() {
-        toolbar.setTitle("Dashboard Fragment");
+        toolbar.setTitle("Dashboard");
         appCompatActivity.setSupportActionBar(toolbar);
     }
 
@@ -180,19 +180,19 @@ public class DashboardFragment extends Fragment {
                             bean = new DashboardItem.RecordsBean();
 
 
-                            String _id = jsonArray.getJSONObject(i).getString("_id");
+                            //String _id = jsonArray.getJSONObject(i).getString("_id");
                             String fname = jsonArray.getJSONObject(i).getString("fname");
                             String lname = jsonArray.getJSONObject(i).getString("lname");
                             String email = jsonArray.getJSONObject(i).getString("email");
-                            String pictureUrl = jsonArray.getJSONObject(i).getString("pictureUrl");
-                            String action = jsonArray.getJSONObject(i).getString("action");
+                            String pictureUrl = jsonArray.getJSONObject(i).getString("picturelUrl");
+                            //String action = jsonArray.getJSONObject(i).getString("action");
                             String text = jsonArray.getJSONObject(i).getString("text");
-                            bean.set_id(_id);
+                            //bean.set_id(_id);
                             bean.setFname(fname);
                             bean.setLname(lname);
                             bean.setEmail(email);
-                            bean.setPictureUrl(pictureUrl);
-                            bean.setAction(action);
+                            bean.setPicturelUrl(pictureUrl);
+                           // bean.setAction(action);
                             bean.setText(text);
 
                             mList2.add(bean);

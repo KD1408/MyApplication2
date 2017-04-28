@@ -7,12 +7,10 @@ import java.util.List;
  */
 
 public class DashboardItem {
-
-
     /**
      * status : true
-     * records : [{"_id":"57dd048d45b169efde7dbe99","fname":"jay","lname":"shah","email":"jayshah@gmail.com","pictureUrl":"http://publichealth.gwu.edu/sites/default/files/graham_jay_250x250.png","action":"registered","text":"Registered in your community."},{"_id":"57dd048d45b169efde7dbe99","fname":"krutarth","lname":"doshi","email":"kk@gmail.com","pictureUrl":"http://jaysantos.com/wp-content/themes/jay%20nueva/images/JaySantos_YTO_05_thumb.jpg","action":"registered","text":"Registered in your community."}]
-     * total : 2
+     * records : [{"id":1,"fname":"Megen","lname":"Grove","email":"mgrove0@home.pl","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":2,"fname":"Kylynn","lname":"Aggus","email":"kaggus1@marriott.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":3,"fname":"Amber","lname":"Cornau","email":"acornau2@liveinternet.ru","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":4,"fname":"Yul","lname":"Janousek","email":"yjanousek3@cam.ac.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":5,"fname":"Cinda","lname":"Prator","email":"cprator4@sphinn.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":6,"fname":"Garnet","lname":"Baldacchino","email":"gbaldacchino5@unesco.org","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":7,"fname":"Gigi","lname":"Lavrinov","email":"glavrinov6@sogou.com","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":8,"fname":"Mozes","lname":"Crosston","email":"mcrosston7@51.la","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":9,"fname":"Leisha","lname":"Everest","email":"leverest8@t.co","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":10,"fname":"Barn","lname":"Slaney","email":"bslaney9@cam.ac.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":11,"fname":"Barny","lname":"Ledster","email":"bledstera@tamu.edu","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":12,"fname":"Gabey","lname":"Lanning","email":"glanningb@globo.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":13,"fname":"Chris","lname":"Zannuto","email":"czannutoc@addthis.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":14,"fname":"Birch","lname":"Whitford","email":"bwhitfordd@cbc.ca","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":15,"fname":"Daisey","lname":"Jeandot","email":"djeandote@craigslist.org","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":16,"fname":"Loree","lname":"Cathery","email":"lcatheryf@europa.eu","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":17,"fname":"Trip","lname":"McLachlan","email":"tmclachlang@wiley.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":18,"fname":"Krissie","lname":"Havick","email":"khavickh@hatena.ne.jp","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":19,"fname":"Liesa","lname":"Demcak","email":"ldemcaki@guardian.co.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":20,"fname":"Katha","lname":"Nockells","email":"knockellsj@seattletimes.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":21,"fname":"Gretta","lname":"McComiskey","email":"gmccomiskeyk@elegantthemes.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":22,"fname":"Lonny","lname":"Filintsev","email":"lfilintsevl@sogou.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":23,"fname":"Peterus","lname":"Hoofe","email":"phoofem@unblog.fr","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":24,"fname":"Rinaldo","lname":"Savage","email":"rsavagen@mozilla.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":25,"fname":"Obidiah","lname":"Ridel","email":"oridelo@mysql.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":26,"fname":"Augie","lname":"Turfes","email":"aturfesp@dell.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":27,"fname":"Peadar","lname":"Chattington","email":"pchattingtonq@toplist.cz","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":28,"fname":"Ula","lname":"Barribal","email":"ubarribalr@state.tx.us","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":29,"fname":"Rudiger","lname":"Ruler","email":"rrulers@aol.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":30,"fname":"April","lname":"Stannus","email":"astannust@wikipedia.org","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."}]
+     * total : 30
      */
 
     private boolean status;
@@ -45,29 +43,29 @@ public class DashboardItem {
 
     public static class RecordsBean {
         /**
-         * _id : 57dd048d45b169efde7dbe99
-         * fname : jay
-         * lname : shah
-         * email : jayshah@gmail.com
-         * pictureUrl : http://publichealth.gwu.edu/sites/default/files/graham_jay_250x250.png
+         * id : 1
+         * fname : Megen
+         * lname : Grove
+         * email : mgrove0@home.pl
+         * picturelUrl : http://dummyimage.com/250x250.jpg/ff4444/ffffff
          * action : registered
-         * text : Registered in your community.
+         * text : registered in your community.
          */
 
-        private String _id;
+        private int id;
         private String fname;
         private String lname;
         private String email;
-        private String pictureUrl;
+        private String picturelUrl;
         private String action;
         private String text;
 
-        public String get_id() {
-            return _id;
+        public int getId() {
+            return id;
         }
 
-        public void set_id(String _id) {
-            this._id = _id;
+        public void setId(int id) {
+            this.id = id;
         }
 
         public String getFname() {
@@ -94,12 +92,12 @@ public class DashboardItem {
             this.email = email;
         }
 
-        public String getPictureUrl() {
-            return pictureUrl;
+        public String getPicturelUrl() {
+            return picturelUrl;
         }
 
-        public void setPictureUrl(String pictureUrl) {
-            this.pictureUrl = pictureUrl;
+        public void setPicturelUrl(String picturelUrl) {
+            this.picturelUrl = picturelUrl;
         }
 
         public String getAction() {
@@ -118,4 +116,9 @@ public class DashboardItem {
             this.text = text;
         }
     }
+    // {"status":true,
+    // "records":[{"id":1,"fname":"Megen","lname":"Grove","email":"mgrove0@home.pl","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":2,"fname":"Kylynn","lname":"Aggus","email":"kaggus1@marriott.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":3,"fname":"Amber","lname":"Cornau","email":"acornau2@liveinternet.ru","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":4,"fname":"Yul","lname":"Janousek","email":"yjanousek3@cam.ac.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":5,"fname":"Cinda","lname":"Prator","email":"cprator4@sphinn.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":6,"fname":"Garnet","lname":"Baldacchino","email":"gbaldacchino5@unesco.org","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":7,"fname":"Gigi","lname":"Lavrinov","email":"glavrinov6@sogou.com","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":8,"fname":"Mozes","lname":"Crosston","email":"mcrosston7@51.la","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":9,"fname":"Leisha","lname":"Everest","email":"leverest8@t.co","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":10,"fname":"Barn","lname":"Slaney","email":"bslaney9@cam.ac.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":11,"fname":"Barny","lname":"Ledster","email":"bledstera@tamu.edu","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":12,"fname":"Gabey","lname":"Lanning","email":"glanningb@globo.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":13,"fname":"Chris","lname":"Zannuto","email":"czannutoc@addthis.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":14,"fname":"Birch","lname":"Whitford","email":"bwhitfordd@cbc.ca","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":15,"fname":"Daisey","lname":"Jeandot","email":"djeandote@craigslist.org","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":16,"fname":"Loree","lname":"Cathery","email":"lcatheryf@europa.eu","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":17,"fname":"Trip","lname":"McLachlan","email":"tmclachlang@wiley.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":18,"fname":"Krissie","lname":"Havick","email":"khavickh@hatena.ne.jp","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":19,"fname":"Liesa","lname":"Demcak","email":"ldemcaki@guardian.co.uk","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":20,"fname":"Katha","lname":"Nockells","email":"knockellsj@seattletimes.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":21,"fname":"Gretta","lname":"McComiskey","email":"gmccomiskeyk@elegantthemes.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":22,"fname":"Lonny","lname":"Filintsev","email":"lfilintsevl@sogou.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":23,"fname":"Peterus","lname":"Hoofe","email":"phoofem@unblog.fr","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":24,"fname":"Rinaldo","lname":"Savage","email":"rsavagen@mozilla.com","picturelUrl":"http://dummyimage.com/250x250.jpg/dddddd/000000","action":"registered","text":"registered in your community."},{"id":25,"fname":"Obidiah","lname":"Ridel","email":"oridelo@mysql.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":26,"fname":"Augie","lname":"Turfes","email":"aturfesp@dell.com","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":27,"fname":"Peadar","lname":"Chattington","email":"pchattingtonq@toplist.cz","picturelUrl":"http://dummyimage.com/250x250.jpg/5fa2dd/ffffff","action":"registered","text":"registered in your community."},{"id":28,"fname":"Ula","lname":"Barribal","email":"ubarribalr@state.tx.us","picturelUrl":"http://dummyimage.com/250x250.jpg/cc0000/ffffff","action":"registered","text":"registered in your community."},{"id":29,"fname":"Rudiger","lname":"Ruler","email":"rrulers@aol.com","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."},{"id":30,"fname":"April","lname":"Stannus","email":"astannust@wikipedia.org","picturelUrl":"http://dummyimage.com/250x250.jpg/ff4444/ffffff","action":"registered","text":"registered in your community."}],
+    // "total":30}
+
+
 }

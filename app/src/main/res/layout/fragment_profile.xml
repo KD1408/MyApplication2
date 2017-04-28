@@ -57,12 +57,13 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_fname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
             android:hint="Your First Name"
+            android:enabled="false"
             android:maxLines="1"
             android:textColor="#FFFFFF"/>
 
@@ -75,13 +76,14 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_lname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
             android:hint="Your Last Name"
             android:maxLines="1"
+            android:enabled="false"
             android:textColor="#FFFFFF"/>
 
         <TextView
@@ -93,11 +95,12 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
+            android:enabled="false"
             android:hint="Your Phone Number"
             android:maxLines="1"
             android:textColor="#FFFFFF"/>
@@ -111,12 +114,13 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
             android:hint="Your Email Address"
+            android:enabled="false"
             android:maxLines="1"
             android:textColor="#FFFFFF"/>
 
@@ -129,12 +133,13 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
             android:hint="Your Gender"
+            android:enabled="false"
             android:maxLines="1"
             android:textColor="#FFFFFF"/>
 
@@ -147,11 +152,12 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_relation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
+            android:enabled="false"
             android:hint="Your Relation Status"
             android:maxLines="1"
             android:textColor="#FFFFFF"/>
@@ -165,18 +171,19 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffffffff"
             android:hint="Your Date of Birth"
+            android:enabled="false"
             android:maxLines="1"
             android:maxLength="10"
             android:textColor="#FFFFFF"/>
 
         <Button
-            android:id="@+id/btnNext"
+            android:id="@+id/btnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#9f2c2c"

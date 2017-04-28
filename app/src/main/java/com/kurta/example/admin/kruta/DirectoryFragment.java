@@ -1,13 +1,16 @@
 package com.kurta.example.admin.kruta;
 
 import android.app.Activity;
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -35,6 +38,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+//import java.util.jar.Manifest;
 
 /**
  * Created by admin on 11-Feb-17.
@@ -42,10 +46,11 @@ import java.util.ArrayList;
 public class DirectoryFragment extends Fragment {
     private HomeActivity appCompatActivity;
 
+    private static final int PERMISSION_CALLBACK_CONSTANT = 101;
     private Toolbar toolbar;
     private RecyclerView recyclerView;
 
-    AlertDialog.Builder alertDialog;
+    //AlertDialog.Builder alertDialog;
 
     ConnectionDetector cd;
     DirectoryAdapter mAdapter;
@@ -67,7 +72,7 @@ public class DirectoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        View rootView = inflater.inflate(R.layout.fragment_directory, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_directory, container, false);
        /* int i = getArguments().getInt(ARG_PLANET_NUMBER);
         String planet = getResources().getStringArray(R.array.drawer_item_list)[i];
 
@@ -114,13 +119,12 @@ public class DirectoryFragment extends Fragment {
                         intent.putExtra("title", feedItem.getTitle());
                         startActivity(intent);*/
 
-
-                        DirectoryItem feedItem = mAdapter.getItem(position);
-
-                        String number= feedItem.getRecords().get(position).getPhone();
-                        Toast.makeText(getActivity(), "pos >> " + feedItem.getRecords().get(position).getPhone(), Toast.LENGTH_SHORT).show();
-
+                        //DirectoryItem feedItem = mAdapter.getItem(position);
+                        //String number= feedItem.getRecords().get(position).getPhone();
+                        //Toast.makeText(getActivity(), "pos >> " + feedItem.getRecords().get(position).getPhone(), Toast.LENGTH_SHORT).show();
                         //showDialog(number);
+
+                        openDialPad();
                     }
                 })
         );
@@ -129,6 +133,23 @@ public class DirectoryFragment extends Fragment {
         return rootView;
     }
 
+    private void openDialPad(){
+        if(ActivityCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED){
+          //  if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),Manifest.permission.READ_PHONE_STATE)){
+                    //just request the permission
+                requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE},PERMISSION_CALLBACK_CONSTANT);
+                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "9197491159"));
+                startActivity(callIntent);
+
+            }
+            return;
+
+        //} else {
+            //You already have the permission, just go ahead.
+          // Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "9197491159"));
+            //startActivity(callIntent);
+     //   }
+    }
 /*    private void showDialog(final String number) {
 
 
@@ -195,7 +216,7 @@ public class DirectoryFragment extends Fragment {
 
 
     private void setupToolbar() {
-        toolbar.setTitle("Directory Fragment");
+        toolbar.setTitle("Directory");
         appCompatActivity.setSupportActionBar(toolbar);
     }
 

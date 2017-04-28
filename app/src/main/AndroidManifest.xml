@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.kurta" >
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -17,10 +18,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
         <activity android:name="com.kurta.example.admin.kruta.MainActivity"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
 
         </activity>
 
@@ -45,13 +47,9 @@
         <activity
             android:name="com.kurta.example.admin.kruta.HomeActivity"
             android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.kurta.example.admin.kruta.profile"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true"/>
 
-        </activity>
     </application>
 
 

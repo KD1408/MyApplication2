@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.kurta.R;
@@ -33,7 +35,8 @@ public class ProfileFragment extends Fragment{
     // "qualifications":[],"occupations":[],"phones":[{"privacy":"public","type":"Mobile","number":"9197491159"}],"communityId":"57dd00df45b169efde7dbe98","token":"rJxuLCuSCe"}}
 
     private Toolbar toolbar;
-    private TextView tvFname, tvLname, tvPhone, tvEmail, tvRelation, tvGender, tvDOB;
+    private EditText tvFname, tvLname, tvPhone, tvEmail, tvRelation, tvGender, tvDOB;
+    private Button btn;
     String email,fname,lname,gender,dob,relation,phone;//status;
 
     @Override
@@ -91,13 +94,14 @@ public class ProfileFragment extends Fragment{
 
         setupToolbar();
 
-        tvFname = (TextView) rootView.findViewById(R.id.tv_fname);
-        tvLname = (TextView) rootView.findViewById(R.id.tv_lname);
-        tvPhone = (TextView) rootView.findViewById(R.id.tv_phone);
-        tvEmail = (TextView) rootView.findViewById(R.id.tv_email);
-        tvRelation = (TextView) rootView.findViewById(R.id.tv_relation);
-        tvGender = (TextView) rootView.findViewById(R.id.tv_gender);
-        tvDOB = (TextView) rootView.findViewById(R.id.tv_dob);
+        tvFname = (EditText) rootView.findViewById(R.id.tv_fname);
+        tvLname = (EditText) rootView.findViewById(R.id.tv_lname);
+        tvPhone = (EditText) rootView.findViewById(R.id.tv_phone);
+        tvEmail = (EditText) rootView.findViewById(R.id.tv_email);
+        tvRelation = (EditText) rootView.findViewById(R.id.tv_relation);
+        tvGender = (EditText) rootView.findViewById(R.id.tv_gender);
+        tvDOB = (EditText) rootView.findViewById(R.id.tv_dob);
+        btn = (Button) rootView.findViewById(R.id.btnEdit);
 
 
         tvFname.setText(fname);
@@ -108,6 +112,32 @@ public class ProfileFragment extends Fragment{
         tvGender.setText(gender);
         tvDOB.setText(dob);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                String ButtonText = btn.getText().toString();
+                if (ButtonText.equals("Edit Profile")){
+                    tvFname.setEnabled(true);
+                    tvLname.setEnabled(true);
+                    tvPhone.setEnabled(true);
+                    tvEmail.setEnabled(true);
+                    tvRelation.setEnabled(true);
+                    tvGender.setEnabled(true);
+                    tvDOB.setEnabled(true);
+                    btn.setText("Save Changes");
+                }
+                else{
+                    tvFname.setEnabled(false);
+                    tvLname.setEnabled(false);
+                    tvPhone.setEnabled(false);
+                    tvEmail.setEnabled(false);
+                    tvRelation.setEnabled(false);
+                    tvGender.setEnabled(false);
+                    tvDOB.setEnabled(false);
+                    btn.setText("Edit Profile");
+                }
+            }
+        });
 
         return rootView;
     }

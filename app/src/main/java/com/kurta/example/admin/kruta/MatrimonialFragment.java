@@ -104,7 +104,7 @@ public class MatrimonialFragment extends Fragment{
         setupRecyclerView();
 
 
-        recyclerView.addOnItemTouchListener(
+        /*recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
@@ -116,15 +116,15 @@ public class MatrimonialFragment extends Fragment{
                         startActivity(intent);*/
 
 
-                        MatrimonyItem feedItem = mAdapter.getItem(position);
+                        //MatrimonyItem feedItem = mAdapter.getItem(position);
 
-                        String number= feedItem.getRecords().get(position).getGender();
-                        Toast.makeText(getActivity(), "pos >> " + feedItem.getRecords().get(position).getGender(), Toast.LENGTH_SHORT).show();
+                        //String number= feedItem.getRecords().get(position).getGender();
+                        //Toast.makeText(getActivity(), "pos >> " + feedItem.getRecords().get(position).getGender(), Toast.LENGTH_SHORT).show();
 
-                        showDialog(number);
-                    }
-                })
-        );
+                        //showDialog(number);
+                  //  }
+                //})
+//        );
 
 
         return rootView;
@@ -212,14 +212,14 @@ public class MatrimonialFragment extends Fragment{
 
 
     private void setupToolbar() {
-        toolbar.setTitle("Matrimony Fragment");
+        toolbar.setTitle("Matrimony");
         appCompatActivity.setSupportActionBar(toolbar);
     }
 
 
     private void setupRecyclerView() {
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(layoutManager);
 
 
@@ -266,12 +266,14 @@ public class MatrimonialFragment extends Fragment{
                             String maritalStatus = jsonArray.getJSONObject(i).getString("maritalStatus");
                             String l_name = jsonArray.getJSONObject(i).getString("lname").toLowerCase();
                             String f_name = jsonArray.getJSONObject(i).getString("fname").toUpperCase();
+                            String pictureUrl = jsonArray.getJSONObject(i).getString("displayPicture");
 
-                            Log.e("","Gender >> "+gender);
+                            //Log.e("","Gender >> "+gender);
                             bean.setGender(gender);
                             bean.setMaritalStatus(maritalStatus);
                             bean.setFname(f_name);
                             bean.setLname(l_name);
+                            bean.setDisplayPicture(pictureUrl);
                             mList2.add(bean);
                             item.setRecords(mList2);
                             mList.add(item);
@@ -282,7 +284,7 @@ public class MatrimonialFragment extends Fragment{
                     }
 
 
-                    mAdapter = new MatrimonyAdapter(mList); //pass arrylist of model type in to adapter
+                    mAdapter = new MatrimonyAdapter(getActivity(), mList); //pass arrylist of model type in to adapter
                     recyclerView.setAdapter(mAdapter);//set adapter in to recycler view
 
                 }
